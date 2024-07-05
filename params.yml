@@ -87,6 +87,8 @@ args:
   # Addresses and private keys of the different components.
   # They have been generated using the following command:
   # polycli wallet inspect --mnemonic 'lab code glass agree maid neutral vessel horror deny frequent favorite soft gate galaxy proof vintage once figure diary virtual scissors marble shrug drop' --addresses 9 | tee keys.txt | jq -r '.Addresses[] | [.ETHAddress, .HexPrivateKey] | @tsv' | awk 'BEGIN{split("sequencer,aggregator,claimtxmanager,timelock,admin,loadtest,agglayer,dac,proofsigner",roles,",")} {print "zkevm_l2_" roles[NR] "_address: \"" $1 "\""; print "zkevm_l2_" roles[NR] "_private_key: \"0x" $2 "\"\n"}'
+  
+  # Changing all these to original for git commit.
   zkevm_l2_sequencer_address: "0x5b06837A43bdC3dD9F114558DAf4B26ed49842Ed"
   zkevm_l2_sequencer_private_key: "0x183c492d0ba156041a7f31a1b188958a7a22eebadca741a7fe64436092dc3181"
 
@@ -119,6 +121,7 @@ args:
 
   ## L1 configuration.
   l1_chain_id: 17000
+  # Changing l1_preallocated_mnemonic to original for git commit.
   l1_preallocated_mnemonic: code code code code code code code code code code code quality
   l1_funding_amount: 1ether
   l1_rpc_url: https://eth-holesky.g.alchemy.com/v2/gX4Bzzy0OfPTnC-SoNcdCAeXg_SUk3KB

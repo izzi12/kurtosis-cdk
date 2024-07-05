@@ -3,7 +3,7 @@
 # The deployment process is divided into various stages.
 
 # Deploy local L1.
-deploy_l1: true
+deploy_l1: false
 
 # Deploy zkevm contracts on L1 (and also fund accounts).
 deploy_zkevm_contracts_on_l1: true
@@ -118,11 +118,11 @@ args:
   zkevm_l2_keystore_password: pSnv6Dh5s9ahuzGzH9RoCDrKAMddaX3m
 
   ## L1 configuration.
-  l1_chain_id: 271828
+  l1_chain_id: 17000
   l1_preallocated_mnemonic: code code code code code code code code code code code quality
-  l1_funding_amount: 100ether
-  l1_rpc_url: http://el-1-geth-lighthouse:8545
-  l1_ws_url: ws://el-1-geth-lighthouse:8546
+  l1_funding_amount: 1ether
+  l1_rpc_url: https://eth-holesky.g.alchemy.com/v2/gX4Bzzy0OfPTnC-SoNcdCAeXg_SUk3KB
+  l1_ws_url: wss://eth-holesky.g.alchemy.com/v2/gX4Bzzy0OfPTnC-SoNcdCAeXg_SUk3KB
   # https://github.com/ethpandaops/ethereum-package/tree/main?tab=readme-ov-file#configuration
   l1_additional_services: [
     # blockscout, # block explorer
@@ -155,7 +155,7 @@ args:
 
   # If this is true, we will automatically deploy an ERC20 contract on
   # L1 to be used at the gasTokenAddress
-  zkevm_use_gas_token_contract: false
+  zkevm_use_gas_token_contract: true
 
   ## Permissionless node configuration.
   trusted_sequencer_node_uri: zkevm-node-sequencer-001:6900
